@@ -1,0 +1,518 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+header {
+    background: linear-gradient(135deg, #064e3b, #10b981);
+    color: white;
+    text-align: center;
+    padding: 35px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+nav {
+    background: #064e3b;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #a7f3d0;
+}
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+h2 {
+    color: #047857;
+    margin-bottom: 15px;
+}
+
+.chat-section {
+    min-height: 300px;
+}
+
+#chat-box {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    padding: 15px;
+    height: 200px;
+    overflow-y: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.bot-message {
+    background: #d1fae5;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+button {
+    background: #059669;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #047857;
+}
+
+footer {
+    background: #064e3b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    .chat-input {
+        flex-direction: column;
+    }
+}
+
+/* FITBOT FOOD SCANNER */
+
+.scanner-section {
+    background: white;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000012;
+}
+
+.upload-area {
+    border: 2px dashed #176b55;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+#image-preview {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    max-height: 250px;
+    object-fit: contain;
+    margin: 15px auto;
+    border-radius: 10px;
+}
+
+#image-preview[hidden] {
+    display: none;
+}
+
+.scanner-section label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.scanner-section select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bbb;
+    border-radius: 7px;
+    margin-bottom: 12px;
+}
+
+#nutrition-result {
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.nutrition-card {
+    background: #e1f3eb;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.scanner-note {
+    color: #666;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+/* =================================
+   FITBOT COMPACT FOOD SCANNER
+================================= */
+
+.scanner-section {
+    background: #ffffff;
+    padding: 18px;
+    margin: 12px auto;
+    border-radius: 12px;
+    max-width: 950px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.scanner-section h2 {
+    text-align: center;
+    color: #008b68;
+    margin: 5px 0 8px;
+}
+
+.scanner-description {
+    text-align: center;
+    margin: 5px 0 14px;
+}
+
+/* Image upload area */
+
+.upload-area {
+    border: 2px dashed #08785d;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 10px 0 14px;
+    min-height: 0;
+    text-align: center;
+}
+
+#image-preview {
+    display: block;
+    max-width: 220px;
+    max-height: 150px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: 8px auto;
+    border-radius: 8px;
+}
+
+#image-preview[hidden] {
+    display: none;
+}
+
+#upload-status {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+/* Food and measurement controls */
+
+.scanner-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.scanner-controls label {
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.scanner-controls select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cccccc;
+    border-radius: 7px;
+    background: #ffffff;
+    font-size: 15px;
+    margin: 0;
+}
+
+#analyze-food {
+    display: block;
+    margin: 10px auto;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #07976d;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#analyze-food:hover {
+    background: #067b59;
+}
+
+/* Nutrition report */
+
+#nutrition-result {
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
+.nutrition-card {
+    background: #e5f7ef;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.scanner-note {
+    text-align: center;
+    color: #666666;
+    font-size: 12px;
+    margin: 10px 0 0;
+}
+
+@media (max-width: 600px) {
+    .scanner-section {
+        padding: 12px;
+        margin: 8px;
+    }
+
+    #image-preview {
+        max-width: 180px;
+        max-height: 130px;
+    }
+}
+
+/* CLEAR AND BOLD NUTRITION REPORT */
+
+.nutrition-card {
+    background: #e5f7ef;
+    color: #17352b;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #a6ddc4;
+}
+
+.nutrition-card h2,
+.nutrition-card h3 {
+    color: #075b43;
+    font-weight: 800;
+}
+
+.nutrition-card p {
+    color: #17352b;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.nutrition-card strong {
+    color: #064b37;
+    font-weight: 900;
+}
+
+.nutrition-card .calorie-value {
+    font-size: 30px;
+    font-weight: 900;
+    color: #00845e;
+}
+
+/* MULTI FOOD SCANNER */
+
+.food-item-row {
+    background: #f0faf5;
+    border: 1px solid #c4e8d7;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 12px 0;
+}
+
+.food-item-row label {
+    display: block;
+    font-weight: 800;
+    color: #075b43;
+    margin: 8px 0;
+}
+
+.food-item-row select,
+.food-item-row input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #b8cfc3;
+    border-radius: 8px;
+    background: white;
+    color: #17352b;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+#add-food {
+    background: #e0f4e9;
+    color: #075b43;
+    border: 1px solid #07976d;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 8px 0;
+}
+
+.remove-food {
+    background: #fff0f0;
+    color: #a32b2b;
+    border: 1px solid #e6bcbc;
+    padding: 9px 14px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.nutrition-card {
+    background: #e5f7ef;
+    color: #17352b;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 18px;
+}
+
+.nutrition-card h2,
+.nutrition-card h3 {
+    color: #075b43;
+    font-weight: 900;
+}
+
+.calorie-value {
+    color: #00845e;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.nutrition-table-wrapper {
+    overflow-x: auto;
+}
+
+.nutrition-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 560px;
+}
+
+.nutrition-table th,
+.nutrition-table td {
+    border: 1px solid #b9d9ca;
+    padding: 10px;
+    text-align: left;
+    color: #17352b;
+    font-weight: bold;
+}
+
+.nutrition-table th {
+    background: #c9efdc;
+    color: #075b43;
+}
+/* FITBOT AI SCANNER RESULTS */
+
+.scanner-message {
+    background: #e4f7ed;
+    color: #075b43;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 18px;
+}
+
+.nutrition-card {
+    background: #f0faf5;
+    color: #17352b;
+    border: 1px solid #b9e4ce;
+    border-radius: 18px;
+    padding: 22px;
+    margin-top: 22px;
+    box-shadow: 0 5px 18px rgba(0, 80, 50, 0.08);
+}
+
+.nutrition-card h2 {
+    color: #075b43;
+    font-weight: 900;
+}
+
+.nutrition-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.nutrition-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.nutrition-table th,
+.nutrition-table td {
+    padding: 13px;
+    border: 1px solid #c7e5d4;
+    color: #17352b;
+    font-weight: bold;
+    text-align: left;
+}
+
+.nutrition-table th {
+    background: #d5f2e1;
+}
+
+.calorie-value {
+    color: #00966c;
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.scanner-disclaimer {
+    color: #52675e;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+#analyze-food:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+#image-preview {
+    display: block;
+    max-width: 280px;
+    max-height: 240px;
+    object-fit: contain;
+    margin: 15px auto;
+    border-radius: 12px;
+}
